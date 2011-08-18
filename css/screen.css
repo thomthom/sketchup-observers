@@ -1,0 +1,139 @@
+header, hgroup, section {
+  display: block;
+}
+
+
+html {
+  color: #333;
+  background: #fff;
+  font-family: 'Cambria', 'Georgia', sans-serif;
+}
+
+h1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  font-style: italic;
+}
+h2 {
+  font-weight: normal;
+  font-style: italic;
+}
+
+table {
+  clear: both;
+  width: 100%;
+  border: 1px solid silver;
+  border-spacing: 0.2em;
+}
+
+caption {
+  padding: 0.5em 0;
+  font-style: italic;
+}
+
+colgroup#events {
+  background: #eee;
+  text-align: right;
+  width: 16em;
+}
+colgroup#versions {
+  background: #eee;
+  text-align: center;
+}
+
+thead th {
+  background: #eee;
+}
+tbody th {
+  background: #ddd;
+}
+th {
+  font-weight: normal;
+  padding: 0.2em;
+}
+
+td {
+  padding: 0.25em;
+}
+
+td.working {
+  background: #beb;
+}
+td.bugged {
+  background: #eeb;
+}
+td.notworking {
+  background: #ebb;
+}
+td.deprecated {
+  color: #fff;
+  background: #333;
+}
+
+tbody td:first-child {
+  text-align: right;
+}
+tbody td {
+  text-align: center;
+}
+
+dt {
+  background: #dde;
+  margin: 0.1em 0 0 0;
+  padding: 0.25em;
+}
+dd {
+  background: #eee;
+  margin: 0.25em 0 1em 0;
+  padding: 0.25em;
+}
+
+code {
+  color: #a00;
+}
+samp {
+  color: #d60;
+}
+
+a {
+  color: #06e;
+}
+a:visited {
+  color: #47f;
+}
+a:hover {
+  color: #29f;
+}
+
+dfn {
+  font-style: normal;
+  border-bottom: 1px dotted;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+#toc ul {
+  padding: 0 ;
+  list-style-type: none;
+}
+#toc li {
+  margin: 0 0 0 2em;
+  float: left
+}
+
+header#title h1 {
+  font-size: 2em;
+}
+header#title h2 {
+  font-size: 1em;
+  margin: -1em 0 2em;
+}
+
+#copyright {
+  text-align: center;
+}
+small {
+  font-style: italic;
+}

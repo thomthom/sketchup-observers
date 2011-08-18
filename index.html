@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>Google SketchUp Observer Overview</title>
+
+	<link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="css/screen.css"
+  />
+</head>
+<body>
+
+<header id="title">
+  <hgroup>
+    <h1>State of Google SketchUp's Observers</h1>
+    <h2>12 September 2010</h2>
+  </hgroup>
+</header>
+
+<section>
+  <p>
+    This is an attempt to map the availability, bugs and issues with SketchUp's
+    observer system.
+    Data is gathered from personal testing and from information on the internet
+    such as <a href="http://forums.sketchucation.com/viewtopic.php?f=180&amp;t=20676">SketchUcation</a>.
+    All observers has not been tested equally in depth, nor has all been tested
+    on both platforms.
+  </p>
+  <p>
+    Please <a href="http://www.thomthom.net/about/contact.html">contact</a> me
+    if you can provide more information on this topic.
+  </p>
+</section>
+
+<section id="toc">
+  <header>
+    <h1>Table of Content</h1>
+  </header>
+  <ul>
+    <li><a href="#AppObserver">AppObserver</a></li>
+    <li><a href="#DefinitionObserver">DefinitionObserver</a></li>
+    <li><a href="#DefinitionsObserver">DefinitionsObserver</a></li>
+    <li><a href="#EntitiesObserver">EntitiesObserver</a></li>
+    <li><a href="#EntityObserver">EntityObserver</a></li>
+    <li><a href="#FrameChangeObserver">FrameChangeObserver</a></li>
+    <li><a href="#InstanceObserver">InstanceObserver</a></li>
+    <li><a href="#LayersObserver">LayersObserver</a></li>
+    <li><a href="#MaterialsObserver">MaterialsObserver</a></li>
+    <li><a href="#ModelObserver">ModelObserver</a></li>
+    <li><a href="#OptionsProviderObserver">OptionsProviderObserver</a></li>
+    <li><a href="#PagesObserver">PagesObserver</a></li>
+    <li><a href="#RenderingOptionsObserver">RenderingOptionsObserver</a></li>
+    <li><a href="#SelectionObserver">SelectionObserver</a></li>
+    <li><a href="#ShadowInfoObserver">ShadowInfoObserver</a></li>
+    <li><a href="#ToolsObserver">ToolsObserver</a></li>
+    <li><a href="#ViewObserver">ViewObserver</a></li>
+  </ul>
+</section>
+
+
+<table>
+
+<caption>Chart of Observer Issues in Google SketchUp</caption>
+
+<colgroup id="events"></colgroup>
+<colgroup id="versions" span="4"></colgroup>
+
+<tbody id="AppObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/appobserver.html">
+      AppObserver
+      </a>
+    </th>
+    <th><dfn title="Google SketchUp 6.4.265 (PC)">SketchUp 6</dfn></th>
+    <th><dfn title="Google SketchUp 7.0.10247 (PC)">SketchUp 7.0</dfn></th>
+    <th><dfn title="Google SketchUp 7.1.6860 (PC)">SketchUp 7.1</dfn></th>
+    <th><dfn title="Google SketchUp 8.0.3117 (PC)">SketchUp 8.0</dfn></th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/appobserver.html#onNewModel">
+        <code>onNewModel</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/appobserver.html#onOpenModel">
+        <code>onOpenModel</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/appobserver.html#onQuit">
+        <code>onQuit</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/appobserver.html#onUnloadExtension">
+        <code>onUnloadExtension</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="DefinitionObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionobserver.html">
+      DefinitionObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionobserver.html#onComponentInstanceAdded">
+        <code>onComponentInstanceAdded</code>
+      </a>
+    </td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="bugged"><a href="#note_DefinitionObserver">Mistrigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionobserver.html#onComponentInstanceRemoved">
+        <code>onComponentInstanceRemoved</code>
+      </a>
+    </td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="bugged"><a href="#note_DefinitionObserver">Mistrigger</a></td>
+  </tr>
+</tbody>
+
+<tbody id="DefinitionsObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionsobserver.html">
+      DefinitionsObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionsobserver.html#onComponentAdded">
+        <code>onComponentAdded</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionsobserver.html#onComponentPropertiesChanged">
+        <code>onComponentPropertiesChanged</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionsobserver.html#onComponentRemoved">
+        <code>onComponentRemoved</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="bugged"><a href="#note_onComponentRemoved">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onComponentRemoved">Mistrigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/definitionsobserver.html#onComponentTypeChanged">
+        <code>onComponentTypeChanged</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="EntitiesObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entitiesobserver.html">
+      EntitiesObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <code>onContentsModified</code>
+    </td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="deprecated"><a href="#note_onContentsModified">Deprecated</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entitiesobserver.html#onElementAdded">
+        <code>onElementAdded</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entitiesobserver.html#onElementModified">
+        <code>onElementModified</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td>Didn't Exist</td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entitiesobserver.html#onElementRemoved">
+        <code>onElementRemoved</code>
+      </a>
+    </td>
+    <td class="notworking">Can Crash</td>
+    <td class="notworking">Can Crash</td>
+    <td class="notworking">Can Crash</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entitiesobserver.html#onEraseEntities">
+        <code>onEraseEntities</code>
+      </a>
+    </td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+  </tr>
+</tbody>
+
+<tbody id="EntityObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entityobserver.html">
+      EntityObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entityobserver.html#onChangeEntity">
+        <code>onChangeEntity</code>
+      </a>
+    </td>
+    <td class="notworking">Can Crash, <a href="#note_EntityObserver">Mistrigger</a></td>
+    <td class="notworking">Can Crash, <a href="#note_EntityObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_EntityObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_EntityObserver">Mistrigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/entityobserver.html#onEraseEntity">
+        <code>onEraseEntity</code>
+      </a>
+    </td>
+    <td class="notworking">Can Crash, <a href="#note_EntityObserver">Bugged</a></td>
+    <td class="notworking">Can Crash, <a href="#note_EntityObserver">Bugged</a></td>
+    <td class="bugged"><a href="#note_EntityObserver">Bugged</a></td>
+    <td class="bugged"><a href="#note_EntityObserver">Bugged</a></td>
+  </tr>
+</tbody>
+
+<tbody id="FrameChangeObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pages.html#add_frame_change_observer">
+      FrameChangeObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pages.html#add_frame_change_observer">
+        <code>frameChange</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
+    <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
+    <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
+    <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
+  </tr>
+</tbody>
+
+<tbody id="InstanceObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/instanceobserver.html">
+      InstanceObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/instanceobserver.html#onClose">
+        <code>onClose</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking"><a href="#note_InstanceObserver">Can Crash under OSX</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/instanceobserver.html#onOpen">
+        <code>onOpen</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="notworking"><a href="#note_InstanceObserver">Can Crash under OSX</a></td>
+  </tr>
+</tbody>
+
+<tbody id="LayersObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/layersobserver.html">
+      LayersObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/layersobserver.html#onCurrentLayerChanged">
+        <code>onCurrentLayerChanged</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/layersobserver.html#onLayerAdded">
+        <code>onLayerAdded</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/layersobserver.html#onLayerRemoved">
+        <code>onLayerRemoved</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/layersobserver.html#onRemoveAllLayers">
+        <code>onRemoveAllLayers</code>
+      </a>
+    </td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+  </tr>
+</tbody>
+
+<tbody id="MaterialsObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html">
+      MaterialsObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialAdd">
+        <code>onMaterialAdd</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialRefChange">
+        <code>onMaterialRefChange</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="bugged"><a href="#note_onMaterialRefChange">Mistrigger</a></td>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialSetCurrent">
+        <code>onMaterialSetCurrent</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_onMaterialSetCurrent">Bugged under OSX</a></td>
+    <td class="bugged"><a href="#note_onMaterialSetCurrent">Bugged under OSX</a></td>
+    <td class="bugged"><a href="#note_onMaterialSetCurrent">Bugged under OSX</a></td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialChange">
+        <code>onMaterialChange</code>
+      </a>
+    </td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialRemove">
+        <code>onMaterialRemove</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialRemove">
+        <code>onMaterialRemoveAll</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_onMaterialRemoveAll">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onMaterialRemoveAll">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onMaterialRemoveAll">Mistrigger</a></td>
+    <td class="deprecated">Deprecated</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/materialsobserver.html#onMaterialUndoRedo">
+        <code>onMaterialUndoRedo</code>
+      </a>
+    </td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="notworking">Doesn't Trigger</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="ModelObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html">
+      ModelObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onActivePathChanged">
+        <code>onActivePathChanged</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onAfterComponentSaveAs">
+        <code>onAfterComponentSaveAs</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onDeleteModel">
+        <code>onDeleteModel</code>
+      </a>
+    </td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onEraseAll">
+        <code>onEraseAll</code>
+      </a>
+    </td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onExplode">
+        <code>onExplode</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onPlaceComponent">
+        <code>onPlaceComponent</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onPostSaveModel">
+        <code>onPostSaveModel</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td>Didn't Exist</td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onPreSaveModel">
+        <code>onPreSaveModel</code>
+      </a>
+    </td>
+    <td>Didn't Exist</td>
+    <td>Didn't Exist</td>
+    <td>Didn't Exist</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onSaveModel">
+        <code>onSaveModel</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_onSaveModel#">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onSaveModel#">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onSaveModel#">Mistrigger</a></td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onTransactionAbort">
+        <code>onTransactionAbort</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onTransactionCommit">
+        <code>onTransactionCommit</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onTransactionEmpty">
+        <code>onTransactionEmpty</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onTransactionRedo">
+        <code>onTransactionRedo</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onTransactionStart">
+        <code>onTransactionStart</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/modelobserver.html#onTransactionUndo">
+        <code>onTransactionUndo</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="OptionsProviderObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/optionsproviderobserver.html">
+      OptionsProviderObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/optionsproviderobserver.html#onOptionsProviderChanged">
+        <code>onOptionsProviderChanged</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="PagesObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pagesobserver.html">
+      PagesObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pagesobserver.html#onContentsModified">
+        <code>onContentsModified</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pagesobserver.html#onElementAdded">
+        <code>onElementAdded</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pagesobserver.html#onElementRemoved">
+        <code>onElementRemoved</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="RenderingOptionsObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/renderingoptionsobserver.html">
+      RenderingOptionsObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/renderingoptionsobserver.html#onRenderingOptionsChanged">
+        <code>onRenderingOptionsChanged</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="SelectionObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/selectionobserver.html">
+      SelectionObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/selectionobserver.html#onSelectionAdded">
+        <code>onSelectionAdded</code>
+      </a>
+    </td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/selectionobserver.html#onSelectionBulkChange">
+        <code>onSelectionBulkChange</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/selectionobserver.html#onSelectionCleared">
+        <code>onSelectionCleared</code>
+      </a>
+    </td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/selectionobserver.html#onSelectionRemoved">
+        <code>onSelectionRemoved</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="ShadowInfoObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/shadowinfoobserver.html">
+      ShadowInfoObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/shadowinfoobserver.html#onShadowInfoChanged">
+        <code>onShadowInfoChanged</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="ToolsObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/toolsobserver.html">
+      ToolsObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/toolsobserver.html#onActiveToolChanged">
+        <code>onActiveToolChanged</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
+    <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/toolsobserver.html#onToolStateChanged">
+        <code>onToolStateChanged</code>
+      </a>
+    </td>
+    <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
+    <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+<tbody id="ViewObserver">
+  <tr>
+    <th>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/viewobserver.html">
+      ViewObserver
+      </a>
+    </th>
+    <th>SketchUp 6</th>
+    <th>SketchUp 7.0</th>
+    <th>SketchUp 7.1</th>
+    <th>SketchUp 8.0</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://code.google.com/apis/sketchup/docs/ourdoc/viewobserver.html#onViewChanged">
+        <code>onViewChanged</code>
+      </a>
+    </td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+    <td class="working">Working</td>
+  </tr>
+</tbody>
+
+</table>
+
+
+<section>
+
+<header>
+<h1>Notes</h1>
+</header>
+
+<dl>
+
+  <dt id="note_DefinitionObserver">
+    DefinitionObserver.onComponentInstanceAdded &mdash; SketchUp 8.0+
+  </dt>
+  <dt>
+    DefinitionObserver.onComponentInstanceRemoved &mdash; SketchUp 8.0+
+  </dt>
+  <dd>
+    <p>When the user performs a Copy+Move the events triggers unexpectantly.</p>
+    <ul>
+      <li>User activates Move Tool on an instance of <samp>#&lt;Sketchup::ComponentDefinition:0xa8d2b24&gt;</samp></li>
+      <li>User press Ctrl to activate copy modifier</li>
+      <li><samp>onComponentInstanceAdded:[#&lt;Sketchup::ComponentDefinition:0xa8d2b24&gt;, #&lt;Sketchup::ComponentInstance:0xa77d058&gt;]</samp></li>
+      <li>User complete the Move+Copy operation</li>
+      <li><samp>onComponentInstanceAdded:[#&lt;Sketchup::ComponentDefinition:0xa770b3c&gt;, #&lt;Sketchup::ComponentInstance:0xa770b50&gt;]</samp></li>
+      <li><samp>onComponentInstanceRemoved:[#&lt;Sketchup::ComponentDefinition:0xa770b3c&gt;, #&lt;Sketchup::ComponentInstance:0xa770b50&gt;]</samp></li>
+    </ul>
+    <p>Even though only one instance is added the event triggers multiple times. Notice that the two last events refer to a non-existant definition.</p>
+  </dd>
+  
+  <dt id="note_onComponentPropertiesChanged">
+    DefinitionsObserver.onComponentPropertiesChanged &mdash; SketchUp 6.0+
+  </dt>
+  <dd>
+    <p>
+      There are several issues with this event's behaviour and the API documentation's
+      description:
+    </p>
+    <ul>
+      <li>Mistriggers before <code>onComponentAdded</code>.</li>
+      <li>Triggers on name change, but not on description change.</li>
+      <li>
+        Manual says it should trigger when a definition's property changes,
+        but changing Glue To, Cut Opening, Face Camera does not trigger the event.
+      </li>
+    </ul>
+  </dd>
+  
+  <dt id="note_onComponentRemoved">
+    DefinitionsObserver.onComponentRemoved &mdash; SketchUp 7.1 &ndash; 8.0
+  </dt>
+  <dd>
+    <p>
+      There are several issues with this event's behaviour and the API documentation's
+      description:
+    </p>
+    <ul>
+      <li>Triggers twice when a definition is removed. (Group erased or Components purged.)</li>
+      <li>Triggers when the user performs a Move+Copy, reference a non-existant definition.</li>
+    </ul>
+  </dd>
+  
+  <dt id="note_EntityObserver">
+    EntityObserver.onChangeEntity &mdash; SketchUp 6.0 &ndash; 8.0
+  </dt>
+  <dt>
+    EntityObserver.onEraseEntity &mdash; SketchUp 6.0 &ndash; 8.0
+  </dt>
+  <dd>
+    <ul>
+      <li>
+        <code>EntityObserver.onChangeEntity</code> mistriggers right before
+        <code>EntityObserver.onEraseEntity</code>, referencing a non-existant
+        entity.
+      </li>
+      <li>
+        <code>EntityObserver.onEraseEntity</code> reference a non-existant entity.
+      </li>
+    </ul>
+  </dd>
+  
+  <dt id="note_onContentsModified">
+    EntitiesObserver.onContentsModified &mdash; SketchUp 8.0+
+  </dt>
+  <dd>
+    <p>
+    As of SU8.0 this event was renamed to <code>EntitiesObserver.onElementModified</code>
+    and changed to provide two aguments.
+    <a href="http://code.google.com/apis/sketchup/docs/releases.html">Release Notes</a>
+    </p>
+  </dd>
+  
+  <dt id="note_frameChange">
+    FrameChangeObserver.frameChange &mdash; SketchUp 6.0 &ndash; 8.0
+  </dt>
+  <dd>
+    <p>
+    Only mentioned in the documentation for the
+    <a href="http://code.google.com/apis/sketchup/docs/ourdoc/pages.html#add_frame_change_observer">Pages class</a>.    
+    And it does not have an interface class one can inherit from.
+    </p>
+    <pre><code>
+class Test_FrameChangeObserver
+  def frameChange( fromPage, toPage, percent_done )
+    puts "#{fromPage} - #{toPage} - #{percent_done}"
+  end
+end
+Sketchup::Pages.add_frame_change_observer(Test_FrameChangeObserver.new)
+    </code></pre>
+    <p><a href="http://code.google.com/apis/sketchup/docs/ourdoc/toolsobserver.html#onActiveToolChanged">Note from the API docs:</a></p>
+    <blockquote>
+      In SketchUp 6 and 7, the <code>fromPage</code> argument into the callback
+      does not appear to be populated on the PC. You can store a variable that
+      keeps track of the <code>toPage</code> and then use that on a subsequent
+      Scene selection to determine the last Page that the user was on.
+    </blockquote>
+  </dd>
+  
+  <dt id="note_InstanceObserver">
+    InstanceObserver &mdash; SketchUp 8.0+
+  </dt>
+  <dd>
+    <p>
+    Under OSX, when using this observer SketchUp will crash when the user quits
+    SketchUp without saving the model first. Quiting and then choosing to save
+    will also cause crash.
+    </p>
+    <p>
+    SketchUp under Windows does not suffer from this.
+    </p>
+  </dd>
+  
+  <dt id="note_onSaveModel">
+    ModelObserver.onSaveModel &mdash; SketchUp 6.0 &ndash; 7.1
+  </dt>
+  <dd>
+    <p>
+      This event mistriggers when the user initiate Save As and then cancels
+      the operation.
+    </p>
+  </dd>
+  
+  <dt id="note_onCurrentLayerChanged">
+    LayersObserver.onCurrentLayerChanged &mdash; SketchUp 6.0+
+  </dt>
+  <dd>
+    <p>
+    Renaming the current layer will also trigger this event. Renaming any other
+    layers does not trigger this event.
+    </p>
+  </dd>
+  
+  <dt id="note_onMaterialRefChange">
+    MaterialsObserver.onMaterialRefChange &mdash; SketchUp 8.0+
+  </dt>
+  <dd>
+    <p>
+    When purging materials, or right-clicking a material in the Material Browser,
+    this event triggers one time for every entity with a material. This causes
+    a long series of events to trigger unnecessarily.
+    </p>
+  </dd>
+  
+  <dt id="note_onMaterialSetCurrent">
+    MaterialsObserver.onMaterialSetCurrent &mdash; SketchUp 6.0 &ndash; 7.1
+  </dt>
+  <dd>
+    <p>
+    Under OSX, this event will trigger when the user paints something in the model,
+    as oppose to under Windows when it trigger as the user picks a new material.
+    </p>
+  </dd>
+    
+  <dt id="note_onMaterialRemoveAll">
+    MaterialsObserver.onMaterialRemoveAll &mdash; SketchUp 6.0 &ndash; 7.1
+  </dt>
+  <dd>
+    <p>
+    In SketchUp prior to 8.0 this event triggers at other material events, even
+    for the non-triggering materials events. 
+    </p>
+    <p>
+    As of SketchUp 8.0 this event id deprecated.
+    </p>
+  </dd>
+  
+  <dt id="note_SelectionObserver">
+    SelectionObserver &mdash; SketchUp 8.0+
+  </dt>
+  <dd>
+    <p>
+    <code>onSelectionBulkChange</code> triggers instead of
+    <code>onSelectionAdded</code> and <code>onSelectionRemoved</code>.
+    </p>
+    <p>
+    Release notes of SketchUp 8.0 claims the events where fixed, but this
+    appear to not be the case.
+    </p>
+  </dd>
+  
+  <dt id="note_ToolsObserver">
+    ToolsObserver.onActiveToolChanged &mdash; SketchUp 6.0 &ndash; 7.0
+  </dt>
+  <dt>
+    ToolsObserver.onToolStateChanged &mdash; SketchUp 6.0 &ndash; 7.0
+  </dt>
+  <dd>
+    <a href="http://code.google.com/apis/sketchup/docs/ourdoc/toolsobserver.html#onActiveToolChanged">Note from the API docs:</a>
+    <blockquote>
+      In SketchUp 6 and SketchUp 7.0, tool names on the Mac have some of their
+      first characters truncated. For instance, on Windows, a tool is "CameraOrbit".
+      On the Mac, is comes across as "raOrbit". Therefore, use the tool_id to
+      keep track of which tool you need to watch for, or use logic that corrects
+      for the error. 
+    </blockquote>
+  </dd>
+  
+</dl>
+
+</section>
+
+
+<section id="copyright">
+  <small>
+    <a href="http://www.whatiscopyright.org/">Copyright</a> © 2010
+    <a href="http://www.thomthom.net/">Thomas Thomassen</a>
+  </small>
+</section>
+
+</body>
+</html>
