@@ -17,7 +17,7 @@
 <header id="title">
   <hgroup>
     <h1>State of Google SketchUp's Observers</h1>
-    <h2>12 September 2010</h2>
+    <h2>18 August 2011</h2>
   </hgroup>
 </header>
 
@@ -67,7 +67,7 @@
 <caption>Chart of Observer Issues in Google SketchUp</caption>
 
 <colgroup id="events"></colgroup>
-<colgroup id="versions" span="4"></colgroup>
+<colgroup id="versions" span="5"></colgroup>
 
 <tbody id="AppObserver">
   <tr>
@@ -80,6 +80,7 @@
     <th><dfn title="Google SketchUp 7.0.10247 (PC)">SketchUp 7.0</dfn></th>
     <th><dfn title="Google SketchUp 7.1.6860 (PC)">SketchUp 7.1</dfn></th>
     <th><dfn title="Google SketchUp 8.0.3117 (PC)">SketchUp 8.0</dfn></th>
+    <th><dfn title="Google SketchUp 8.0.4811 (PC)">SketchUp 8.0 M1</dfn></th>
   </tr>
   <tr>
     <td>
@@ -87,6 +88,7 @@
         <code>onNewModel</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -102,6 +104,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -109,6 +112,7 @@
         <code>onQuit</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -121,6 +125,7 @@
       </a>
     </td>
     <td>Didn't Exist</td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -138,6 +143,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -149,6 +155,7 @@
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
     <td class="bugged"><a href="#note_DefinitionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_DefinitionObserver">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -159,6 +166,7 @@
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
+    <td class="bugged"><a href="#note_DefinitionObserver">Mistrigger</a></td>
     <td class="bugged"><a href="#note_DefinitionObserver">Mistrigger</a></td>
   </tr>
 </tbody>
@@ -174,6 +182,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -181,6 +190,7 @@
         <code>onComponentAdded</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -196,6 +206,7 @@
     <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onComponentPropertiesChanged">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -207,6 +218,7 @@
     <td class="working">Working</td>
     <td class="bugged"><a href="#note_onComponentRemoved">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onComponentRemoved">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onComponentRemoved">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -214,6 +226,7 @@
         <code>onComponentTypeChanged</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -232,6 +245,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -241,6 +255,7 @@
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
     <td class="deprecated"><a href="#note_onContentsModified">Deprecated</a></td>
+    <td class="deprecated"><a href="#note_onContentsModified">Deprecated</a></td>
   </tr>
   <tr>
     <td>
@@ -248,6 +263,7 @@
         <code>onElementAdded</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -263,6 +279,7 @@
     <td>Didn't Exist</td>
     <td>Didn't Exist</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -274,6 +291,7 @@
     <td class="notworking">Can Crash</td>
     <td class="notworking">Can Crash</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -281,6 +299,7 @@
         <code>onEraseEntities</code>
       </a>
     </td>
+    <td>?</td>
     <td>?</td>
     <td>?</td>
     <td>?</td>
@@ -299,6 +318,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -310,6 +330,7 @@
     <td class="notworking">Can Crash, <a href="#note_EntityObserver">Mistrigger</a></td>
     <td class="bugged"><a href="#note_EntityObserver">Mistrigger</a></td>
     <td class="bugged"><a href="#note_EntityObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_EntityObserver">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -319,6 +340,7 @@
     </td>
     <td class="notworking">Can Crash, <a href="#note_EntityObserver">Bugged</a></td>
     <td class="notworking">Can Crash, <a href="#note_EntityObserver">Bugged</a></td>
+    <td class="bugged"><a href="#note_EntityObserver">Bugged</a></td>
     <td class="bugged"><a href="#note_EntityObserver">Bugged</a></td>
     <td class="bugged"><a href="#note_EntityObserver">Bugged</a></td>
   </tr>
@@ -335,6 +357,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -342,6 +365,7 @@
         <code>frameChange</code>
       </a>
     </td>
+    <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
     <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
     <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
     <td class="bugged"><a href="#note_frameChange">Bugged under Windows</a></td>
@@ -360,6 +384,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -371,6 +396,7 @@
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking"><a href="#note_InstanceObserver">Can Crash under OSX</a></td>
+    <td class="notworking"><a href="#note_InstanceObserver">Can Crash under OSX</a></td>
   </tr>
   <tr>
     <td>
@@ -381,6 +407,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="notworking"><a href="#note_InstanceObserver">Can Crash under OSX</a></td>
     <td class="notworking"><a href="#note_InstanceObserver">Can Crash under OSX</a></td>
   </tr>
 </tbody>
@@ -396,6 +423,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -403,6 +431,7 @@
         <code>onCurrentLayerChanged</code>
       </a>
     </td>
+    <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onCurrentLayerChanged">Mistrigger</a></td>
@@ -418,6 +447,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -429,6 +459,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -436,6 +467,7 @@
         <code>onRemoveAllLayers</code>
       </a>
     </td>
+    <td>?</td>
     <td>?</td>
     <td>?</td>
     <td>?</td>
@@ -454,6 +486,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -461,6 +494,7 @@
         <code>onMaterialAdd</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -476,6 +510,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="bugged"><a href="#note_onMaterialRefChange">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onMaterialRefChange">Mistrigger</a></td>
   </tr>
   
   <tr>
@@ -488,6 +523,7 @@
     <td class="bugged"><a href="#note_onMaterialSetCurrent">Bugged under OSX</a></td>
     <td class="bugged"><a href="#note_onMaterialSetCurrent">Bugged under OSX</a></td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -499,6 +535,7 @@
     <td class="notworking">Doesn't Trigger</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -506,6 +543,7 @@
         <code>onMaterialRemove</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -521,6 +559,7 @@
     <td class="bugged"><a href="#note_onMaterialRemoveAll">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onMaterialRemoveAll">Mistrigger</a></td>
     <td class="deprecated">Deprecated</td>
+    <td class="deprecated">Deprecated</td>
   </tr>
   <tr>
     <td>
@@ -531,6 +570,7 @@
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
     <td class="notworking">Doesn't Trigger</td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
   </tr>
 </tbody>
@@ -546,6 +586,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -554,6 +595,7 @@
       </a>
     </td>
     <td>Didn't Exist</td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -568,6 +610,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -575,6 +618,7 @@
         <code>onDeleteModel</code>
       </a>
     </td>
+    <td>?</td>
     <td>?</td>
     <td>?</td>
     <td>?</td>
@@ -590,6 +634,7 @@
     <td>?</td>
     <td>?</td>
     <td>?</td>
+    <td>?</td>
   </tr>
   <tr>
     <td>
@@ -598,6 +643,7 @@
       </a>
     </td>
     <td>Didn't Exist</td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -612,6 +658,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -622,6 +669,7 @@
     <td>Didn't Exist</td>
     <td>Didn't Exist</td>
     <td>Didn't Exist</td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
   </tr>
   <tr>
@@ -634,6 +682,7 @@
     <td>Didn't Exist</td>
     <td>Didn't Exist</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -644,6 +693,7 @@
     <td class="bugged"><a href="#note_onSaveModel#">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onSaveModel#">Mistrigger</a></td>
     <td class="bugged"><a href="#note_onSaveModel#">Mistrigger</a></td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
   </tr>
   <tr>
@@ -656,6 +706,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -663,10 +714,11 @@
         <code>onTransactionCommit</code>
       </a>
     </td>
-    <td class="working">Working</td>
-    <td class="working">Working</td>
-    <td class="working">Working</td>
-    <td class="working">Working</td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -674,6 +726,7 @@
         <code>onTransactionEmpty</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -689,6 +742,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -696,10 +750,11 @@
         <code>onTransactionStart</code>
       </a>
     </td>
-    <td class="working">Working</td>
-    <td class="working">Working</td>
-    <td class="working">Working</td>
-    <td class="working">Working</td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_onTransaction">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -707,6 +762,7 @@
         <code>onTransactionUndo</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -725,6 +781,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -732,6 +789,7 @@
         <code>onOptionsProviderChanged</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -750,6 +808,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -757,6 +816,7 @@
         <code>onContentsModified</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -772,6 +832,7 @@
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -779,6 +840,7 @@
         <code>onElementRemoved</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -797,6 +859,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -804,6 +867,7 @@
         <code>onRenderingOptionsChanged</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -822,6 +886,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -829,10 +894,11 @@
         <code>onSelectionAdded</code>
       </a>
     </td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
   </tr>
   <tr>
     <td>
@@ -840,10 +906,11 @@
         <code>onSelectionBulkChange</code>
       </a>
     </td>
-    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
-    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
-    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
-    <td class="bugged"><a href="#SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_SelectionObserver">Mistrigger</a></td>
+    <td class="bugged"><a href="#note_SelectionObserver">Mistrigger</a></td>
   </tr>
   <tr>
     <td>
@@ -851,10 +918,11 @@
         <code>onSelectionCleared</code>
       </a>
     </td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
-    <td class="notworking"><a href="#SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
+    <td class="notworking"><a href="#note_SelectionObserver">Doesn't Trigger</a></td>
   </tr>
   <tr>
     <td>
@@ -862,6 +930,7 @@
         <code>onSelectionRemoved</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -880,6 +949,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -887,6 +957,7 @@
         <code>onShadowInfoChanged</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -905,6 +976,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -916,6 +988,7 @@
     <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
     <td class="working">Working</td>
     <td class="working">Working</td>
+    <td class="working">Working</td>
   </tr>
   <tr>
     <td>
@@ -925,6 +998,7 @@
     </td>
     <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
     <td class="bugged"><a href="#note_ToolsObserver">Bugged under OSX</a></td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
   </tr>
@@ -941,6 +1015,7 @@
     <th>SketchUp 7.0</th>
     <th>SketchUp 7.1</th>
     <th>SketchUp 8.0</th>
+    <th>SketchUp 8.0 M1</th>
   </tr>
   <tr>
     <td>
@@ -948,6 +1023,7 @@
         <code>onViewChanged</code>
       </a>
     </td>
+    <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
     <td class="working">Working</td>
@@ -1004,7 +1080,7 @@
   </dd>
   
   <dt id="note_onComponentRemoved">
-    DefinitionsObserver.onComponentRemoved &mdash; SketchUp 7.1 &ndash; 8.0
+    DefinitionsObserver.onComponentRemoved &mdash; SketchUp 7.1+
   </dt>
   <dd>
     <p>
@@ -1018,10 +1094,10 @@
   </dd>
   
   <dt id="note_EntityObserver">
-    EntityObserver.onChangeEntity &mdash; SketchUp 6.0 &ndash; 8.0
+    EntityObserver.onChangeEntity &mdash; SketchUp 6.0+
   </dt>
   <dt>
-    EntityObserver.onEraseEntity &mdash; SketchUp 6.0 &ndash; 8.0
+    EntityObserver.onEraseEntity &mdash; SketchUp 6.0+
   </dt>
   <dd>
     <ul>
@@ -1048,7 +1124,7 @@
   </dd>
   
   <dt id="note_frameChange">
-    FrameChangeObserver.frameChange &mdash; SketchUp 6.0 &ndash; 8.0
+    FrameChangeObserver.frameChange &mdash; SketchUp 6.0+
   </dt>
   <dd>
     <p>
@@ -1094,6 +1170,24 @@ Sketchup::Pages.add_frame_change_observer(Test_FrameChangeObserver.new)
     <p>
       This event mistriggers when the user initiate Save As and then cancels
       the operation.
+    </p>
+  </dd>
+  
+  <dt id="note_onTransaction">
+    ModelObserver.onTransactionStart &mdash; SketchUp 6.0+
+  </dt>
+  <dt>
+    ModelObserver.onTransactionCommit &mdash; SketchUp 6.0+
+  </dt>
+  <dd>
+    <p>
+      These event mistriggers between the <code>model.start_operation</code> and
+      <code>model.commit_operation</code> every time the model changes instead
+      of being in sync with <code>model.start/commit_operation</code>.
+    </p>
+    <p>
+      Because of this it is not possible to be notified when a new item appears
+      in the undo stack.
     </p>
   </dd>
   
